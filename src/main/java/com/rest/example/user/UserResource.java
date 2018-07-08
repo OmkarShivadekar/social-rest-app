@@ -44,7 +44,7 @@ public class UserResource {
 				throw new UserNotFoundException("id : "+id);
 		
 			
-			//HATEOAS
+			//HATEOAS [lining info/uri of other endpoint]
 			Resource<User> resource = new Resource<User>(user);
 			
 			ControllerLinkBuilder linkTo = 
