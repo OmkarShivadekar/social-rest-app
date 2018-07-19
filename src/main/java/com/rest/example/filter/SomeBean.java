@@ -1,46 +1,44 @@
 package com.rest.example.filter;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
 /**
  * @author Omkar Shivadekar
  * Date : 17-Jul-2018
- * Time : 2:37:43 PM
+ * Time : 2:37:43 PM  
  */
-@JsonIgnoreProperties(value= {"value1"}) //2nd way
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 
-	private String value1;
-	private String value2;
-	@JsonIgnore //1st way useful
-	private String value3;
+	private String field1;
+	private String field2;
+	private String field3;
+	public String getField1() {
+		return field1;
+	}
+	public void setField1(String field1) {
+		this.field1 = field1;
+	}
+	public String getField2() {
+		return field2;
+	}
+	public void setField2(String field2) {
+		this.field2 = field2;
+	}
+	public String getField3() {
+		return field3;
+	}
+	public void setField3(String field3) {
+		this.field3 = field3;
+	}
+	public SomeBean(String field1, String field2, String field3) {
+		this.field1 = field1;
+		this.field2 = field2;
+		this.field3 = field3;
+	}
 
 	
-	public String getValue1() {
-		return value1;
-	}
-	public void setValue1(String value1) {
-		this.value1 = value1;
-	}
-	public String getValue2() {
-		return value2;
-	}
-	public void setValue2(String value2) {
-		this.value2 = value2;
-	}
-	public String getValue3() {
-		return value3;
-	}
-	public void setValue3(String value3) {
-		this.value3 = value3;
-	}
-	public SomeBean(String value1, String value2, String value3) {
-		this.value1 = value1;
-		this.value2 = value2;
-		this.value3 = value3;
-	}
 	
-	public SomeBean() {
-	}
+	
+	
 }
